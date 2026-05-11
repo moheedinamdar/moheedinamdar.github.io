@@ -1,1 +1,1082 @@
-<h1 style="text-align:center">🤗<span style="color:#3498db"><span style="font-size:20px"><span style="font-family:Georgia,serif"><strong>Hey Folks this page is under WIP</strong></span></span></span></h1>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moheed Inamdar — Senior DevSecOps &amp; Platform Engineer</title>
+    <meta name="description"
+        content="Senior DevSecOps & Platform Engineer with 7+ years securing developer platforms at enterprise scale." />
+    <meta name="author" content="Moheed Inamdar" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet" />
+    <style>
+        /* ── Reset & Base ──────────────────────────────────── */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --bg: #0b0f19;
+            --bg-card: #111827;
+            --bg-card-hover: #1a2236;
+            --border: #1e293b;
+            --text: #e2e8f0;
+            --text-dim: #94a3b8;
+            --accent: #38bdf8;
+            --accent2: #818cf8;
+            --accent-glow: rgba(56, 189, 248, 0.15);
+            --mono: 'JetBrains Mono', monospace;
+            --sans: 'Inter', system-ui, -apple-system, sans-serif;
+            --max-w: 1080px;
+            --radius: 12px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--sans);
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color .2s;
+        }
+
+        a:hover {
+            color: var(--accent2);
+        }
+
+        ::selection {
+            background: var(--accent);
+            color: var(--bg);
+        }
+
+        /* ── Layout ────────────────────────────────────────── */
+        .container {
+            max-width: var(--max-w);
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        section {
+            padding: 80px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        .section-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 40px;
+            letter-spacing: -0.02em;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            width: 48px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent), var(--accent2));
+            border-radius: 2px;
+        }
+
+        /* ── Scroll reveal ─────────────────────────────────── */
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ── Hero ──────────────────────────────────────────── */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 60px 24px;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, var(--accent-glow), transparent 70%);
+            top: -200px;
+            right: -100px;
+            pointer-events: none;
+        }
+
+        .hero-inner {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, var(--text) 40%, var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero .subtitle {
+            font-size: clamp(1rem, 2.5vw, 1.25rem);
+            color: var(--text-dim);
+            max-width: 640px;
+            margin: 0 auto 32px;
+            line-height: 1.6;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--text);
+            transition: all .25s;
+        }
+
+        .social-links a:hover {
+            border-color: var(--accent);
+            background: var(--accent-glow);
+            color: var(--accent);
+        }
+
+        .social-links svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* ── About (YAML card) ─────────────────────────────── */
+        .yaml-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 32px;
+            font-family: var(--mono);
+            font-size: 0.85rem;
+            line-height: 1.8;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            color: var(--text-dim);
+        }
+
+        .yaml-card .key {
+            color: var(--accent);
+        }
+
+        .yaml-card .val {
+            color: var(--text);
+        }
+
+        .yaml-card .comment {
+            color: #475569;
+        }
+
+        /* ── Timeline ──────────────────────────────────────── */
+        .timeline {
+            position: relative;
+            padding-left: 32px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--accent), var(--accent2), var(--border));
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 48px;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -37px;
+            top: 6px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--accent);
+            box-shadow: 0 0 0 4px var(--bg);
+        }
+
+        .timeline-date {
+            font-family: var(--mono);
+            font-size: 0.8rem;
+            color: var(--accent);
+            margin-bottom: 4px;
+        }
+
+        .timeline-item h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .timeline-item .role {
+            color: var(--text-dim);
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+        }
+
+        .timeline-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .timeline-tags span {
+            font-size: 0.75rem;
+            padding: 3px 10px;
+            border-radius: 999px;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            color: var(--text-dim);
+        }
+
+        /* ── Projects ──────────────────────────────────────── */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+        }
+
+        .project-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 28px;
+            transition: border-color .25s, transform .25s;
+        }
+
+        .project-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+        }
+
+        .project-card h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .project-card p {
+            font-size: 0.9rem;
+            color: var(--text-dim);
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .project-status {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 999px;
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--accent);
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+        }
+
+        /* ── Tech Stack ────────────────────────────────────── */
+        .stack-group {
+            margin-bottom: 36px;
+        }
+
+        .stack-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .stack-group h3 {
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-dim);
+            margin-bottom: 16px;
+        }
+
+        .stack-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .stack-tags span {
+            font-size: 0.8rem;
+            font-weight: 500;
+            padding: 6px 16px;
+            border-radius: 999px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            color: var(--text);
+            transition: all .2s;
+        }
+
+        .stack-tags span:hover {
+            border-color: var(--accent);
+            background: var(--accent-glow);
+            color: var(--accent);
+        }
+
+        /* ── Achievements ──────────────────────────────────── */
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .achievement-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 28px;
+        }
+
+        .achievement-card h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: var(--accent);
+        }
+
+        .achievement-card ul {
+            list-style: none;
+        }
+
+        .achievement-card li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            color: var(--text-dim);
+            line-height: 1.5;
+        }
+
+        .achievement-card li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 9px;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent);
+        }
+
+        .achievement-card strong {
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        /* ── Awards ─────────────────────────────────────────── */
+        .awards-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .award-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .award-year {
+            font-family: var(--mono);
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--accent);
+            flex-shrink: 0;
+            padding-top: 2px;
+        }
+
+        .award-item h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .award-item p {
+            font-size: 0.875rem;
+            color: var(--text-dim);
+            line-height: 1.5;
+        }
+
+        /* ── Currently ─────────────────────────────────────── */
+        .currently-list {
+            list-style: none;
+        }
+
+        .currently-list li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 16px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--text-dim);
+        }
+
+        .currently-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent), var(--accent2));
+        }
+
+        .currently-list strong {
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        /* ── Certifications (inside About) ─────────────────── */
+        .certs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
+            margin-top: 32px;
+        }
+
+        .cert-group {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 20px;
+        }
+
+        .cert-group h4 {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+
+        .cert-group ul {
+            list-style: none;
+        }
+
+        .cert-group li {
+            font-size: 0.875rem;
+            color: var(--text-dim);
+            padding: 3px 0;
+        }
+
+        /* ── Footer ────────────────────────────────────────── */
+        footer {
+            padding: 48px 24px;
+            text-align: center;
+            border-top: 1px solid var(--border);
+        }
+
+        footer p {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+        }
+
+        footer .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 20px;
+        }
+
+        footer .footer-links a {
+            color: var(--text-dim);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color .2s;
+        }
+
+        footer .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        /* ── Nav ────────────────────────────────────────────── */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(11, 15, 25, 0.8);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid transparent;
+            transition: border-color .3s;
+        }
+
+        nav.scrolled {
+            border-bottom-color: var(--border);
+        }
+
+        nav .nav-inner {
+            max-width: var(--max-w);
+            margin: 0 auto;
+            padding: 14px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--text);
+            letter-spacing: -0.02em;
+        }
+
+        nav .nav-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav .nav-links a {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-dim);
+            transition: color .2s;
+        }
+
+        nav .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        /* hamburger */
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
+        }
+
+        .nav-toggle span {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background: var(--text);
+            margin: 5px 0;
+            transition: all .3s;
+        }
+
+        @media (max-width: 640px) {
+            .nav-links {
+                display: none !important;
+            }
+
+            .nav-toggle {
+                display: block;
+            }
+
+            nav.open .nav-links {
+                display: flex !important;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(11, 15, 25, 0.95);
+                backdrop-filter: blur(16px);
+                padding: 16px 24px;
+                gap: 16px;
+                border-bottom: 1px solid var(--border);
+            }
+
+            nav.open .nav-toggle span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+
+            nav.open .nav-toggle span:nth-child(2) {
+                opacity: 0;
+            }
+
+            nav.open .nav-toggle span:nth-child(3) {
+                transform: rotate(-45deg) translate(5px, -5px);
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            section {
+                padding: 48px 0;
+            }
+
+            .achievements-grid,
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .award-item {
+                flex-direction: column;
+                gap: 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ── Navigation ──────────────────────────────────── -->
+    <nav id="nav">
+        <div class="nav-inner">
+            <a href="#" class="logo">MI</a>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#career">Career</a>
+                <a href="#projects">Projects</a>
+                <a href="#stack">Stack</a>
+                <a href="#achievements">Achievements</a>
+                <a href="#currently">Now</a>
+            </div>
+            <button class="nav-toggle" aria-label="Menu"
+                onclick="document.getElementById('nav').classList.toggle('open')">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ── Hero ────────────────────────────────────────── -->
+    <header class="hero">
+        <div class="hero-inner">
+            <h1>Hey, I'm Moheed</h1>
+            <p class="subtitle">
+                Senior DevSecOps &amp; Platform Engineer &middot; 7+ years &middot;
+                Securing developer platforms at enterprise scale
+            </p>
+            <div class="social-links">
+                <a href="https://linkedin.com/in/moheedinamdar" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                    </svg>
+                    LinkedIn
+                </a>
+                <a href="https://github.com/moheedinamdar" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                    </svg>
+                    GitHub
+                </a>
+                <a href="https://moheedinamdar.github.io/" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+                    </svg>
+                    Website
+                </a>
+                <a href="mailto:moheedinamdar@gmail.com">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                    </svg>
+                    Email
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ── About ───────────────────────────────────────── -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title reveal">About Me</h2>
+            <div class="yaml-card reveal">
+                <span class="comment"># platform.engineering/v1</span>
+                <span class="key">name:</span> <span class="val">Moheed Inamdar</span>
+                <span class="key">location:</span> <span class="val">Pune, Maharashtra</span>
+                <span class="key">role:</span> <span class="val">Senior DevSecOps &amp; Platform Engineer</span>
+                <span class="key">company:</span> <span class="val">Globant (Client: Roche — GxP regulated)</span>
+                <span class="key">experience:</span> <span class="val">7+ years (since Jan 2019)</span>
+
+                <span class="key">summary:</span>
+                Enterprise-scale DevSecOps and Platform Engineer architecting
+                security-first developer platforms across <span class="val">300+ orgs</span>, <span class="val">50K+
+                    repos</span>,
+                and <span class="val">150K+ projects</span> in regulated industries (pharma, fintech,
+                cybersecurity). Reduced critical vulnerabilities by <span class="val">40%</span>, cut
+                CI/CD onboarding by <span class="val">60%</span>, and built enterprise-adopted security
+                metrics platforms used by <span class="val">100+ product owners</span>.
+
+                <span class="key">currentFocus:</span>
+                - Software Supply Chain Security (SLSA, SBOM, Sigstore/cosign)
+                - Internal Developer Platforms (Backstage, golden-path templates)
+                - Policy-as-Code (OPA, Kyverno) and Kubernetes Security
+                - AI-Augmented DevSecOps (LLM-driven vulnerability triage, RAG)
+                - LLMOps reference architectures on Kubernetes
+
+                <span class="key">openTo:</span>
+                <span class="key">roles:</span>
+                - Staff / Principal DevSecOps Engineer
+                - Platform Engineering Lead (IC track)
+                - Cloud Security Architect
+                <span class="key">locations:</span> [Pune, Hyderabad, UAE, Singapore, Remote]
+            </div>
+
+            <div class="certs-grid reveal">
+                <div class="cert-group">
+                    <h4>Earned</h4>
+                    <ul>
+                        <li>AWS Certified Developer — Associate</li>
+                    </ul>
+                </div>
+                <div class="cert-group">
+                    <h4>In Progress</h4>
+                    <ul>
+                        <li>CKS (Certified Kubernetes Security Specialist)</li>
+                        <li>CKA (Certified Kubernetes Administrator)</li>
+                    </ul>
+                </div>
+                <div class="cert-group">
+                    <h4>Planned 2026</h4>
+                    <ul>
+                        <li>AWS Security Specialty</li>
+                        <li>HashiCorp Vault Associate</li>
+                        <li>HashiCorp Terraform Associate</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── Career ──────────────────────────────────────── -->
+    <section id="career">
+        <div class="container">
+            <h2 class="section-title reveal">Career Journey</h2>
+            <div class="timeline">
+
+                <div class="timeline-item reveal">
+                    <div class="timeline-date">2024 — Present</div>
+                    <h3>Globant (Client: Roche)</h3>
+                    <div class="role">Senior DevSecOps &amp; Platform Engineer</div>
+                    <div class="timeline-tags">
+                        <span>DevSecOps at scale</span>
+                        <span>150K+ projects</span>
+                        <span>300+ orgs</span>
+                        <span>40% vuln reduction</span>
+                        <span>Supply chain security</span>
+                        <span>Backstage IDPs</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal">
+                    <div class="timeline-date">2020 — 2024</div>
+                    <h3>Zymr (Client: Virsec)</h3>
+                    <div class="role">Sr. Software Engineer &middot; DevOps Lead</div>
+                    <div class="timeline-tags">
+                        <span>Docker</span>
+                        <span>Kubernetes</span>
+                        <span>Terraform</span>
+                        <span>Container Security</span>
+                        <span>95% early-vuln detection</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal">
+                    <div class="timeline-date">2019 — 2020</div>
+                    <h3>CenturySoft</h3>
+                    <div class="role">Associate Developer</div>
+                    <div class="timeline-tags">
+                        <span>AWS</span>
+                        <span>Jenkins</span>
+                        <span>Python</span>
+                        <span>ETL</span>
+                        <span>Cloud Migration</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ── Projects ────────────────────────────────────── -->
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title reveal">Featured Projects</h2>
+            <p class="reveal"
+                style="color: var(--text-dim); margin-bottom: 28px; margin-top: -20px; font-size: 0.95rem;">
+                A few things I'm actively building and documenting in public.
+            </p>
+            <div class="projects-grid">
+
+                <a href="https://github.com/moheedinamdar/supply-chain-security-pipeline" target="_blank" rel="noopener"
+                    class="project-card reveal" style="color:inherit;text-decoration:none;">
+                    <h3>Supply Chain Security Pipeline</h3>
+                    <p>SLSA Level 3 + SBOM (Syft) + vulnerability scanning (Grype) + Sigstore cosign signing + Kyverno
+                        admission verification on EKS</p>
+                    <span class="project-status">Building</span>
+                </a>
+
+                <a href="https://github.com/moheedinamdar/ai-vulnerability-triage" target="_blank" rel="noopener"
+                    class="project-card reveal" style="color:inherit;text-decoration:none;">
+                    <h3>AI Vulnerability Triage</h3>
+                    <p>LangChain + LLM + RAG over CVE/EPSS data for auto-prioritization and de-duplication of SAST/SCA
+                        findings</p>
+                    <span class="project-status">Building</span>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ── Tech Stack ──────────────────────────────────── -->
+    <section id="stack">
+        <div class="container">
+            <h2 class="section-title reveal">Tech Stack &amp; Expertise</h2>
+
+            <div class="stack-group reveal">
+                <h3>Cloud &amp; Infrastructure</h3>
+                <div class="stack-tags">
+                    <span>AWS</span><span>Azure DevOps</span><span>Terraform</span><span>CloudFormation</span>
+                </div>
+            </div>
+
+            <div class="stack-group reveal">
+                <h3>Containers &amp; Orchestration</h3>
+                <div class="stack-tags">
+                    <span>Docker</span><span>Kubernetes</span><span>Helm</span><span>Rancher</span>
+                </div>
+            </div>
+
+            <div class="stack-group reveal">
+                <h3>CI/CD &amp; GitOps</h3>
+                <div class="stack-tags">
+                    <span>GitHub Actions</span><span>GitLab CI</span><span>Jenkins</span><span>ArgoCD</span>
+                </div>
+            </div>
+
+            <div class="stack-group reveal">
+                <h3>Security Scanning</h3>
+                <div class="stack-tags">
+                    <span>SonarQube</span><span>Snyk</span><span>Trivy</span><span>Checkmarx</span><span>OWASP
+                        ZAP</span><span>Semgrep</span>
+                </div>
+            </div>
+
+            <div class="stack-group reveal">
+                <h3>Supply Chain Security &amp; Policy-as-Code</h3>
+                <div class="stack-tags">
+                    <span>Sigstore / cosign</span><span>SLSA L3</span><span>Syft
+                        SBOM</span><span>OPA</span><span>Kyverno</span>
+                </div>
+            </div>
+
+            <div class="stack-group reveal">
+                <h3>Secrets &amp; Identity</h3>
+                <div class="stack-tags">
+                    <span>HashiCorp Vault</span><span>AWS Secrets Manager</span>
+                </div>
+            </div>
+
+            <div class="stack-group reveal">
+                <h3>Observability</h3>
+                <div class="stack-tags">
+                    <span>Prometheus</span><span>Grafana</span><span>ELK Stack</span><span>OpenTelemetry</span>
+                </div>
+            </div>
+
+            <div class="stack-group reveal">
+                <h3>Platform Engineering &amp; AI</h3>
+                <div class="stack-tags">
+                    <span>Backstage</span><span>LangChain</span><span>pgvector</span><span>BentoML</span>
+                </div>
+            </div>
+
+            <div class="stack-group reveal">
+                <h3>Languages &amp; Scripting</h3>
+                <div class="stack-tags">
+                    <span>Python</span><span>Shell / Bash</span><span>YAML</span><span>HCL</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ── Achievements ─────────────────────────────────── -->
+    <section id="achievements">
+        <div class="container">
+            <h2 class="section-title reveal">Key Achievements</h2>
+            <div class="achievements-grid">
+
+                <div class="achievement-card reveal">
+                    <h3>Globant — Roche (2024–Present)</h3>
+                    <ul>
+                        <li>Architected <strong>Unified Security Metrics Platform</strong> (Python / GraphQL / DuckDB /
+                            Grafana) adopted enterprise-wide</li>
+                        <li>Owned security posture across <strong>300+ orgs, 50K+ repos, 150K+ projects</strong></li>
+                        <li>Reduced critical vulnerabilities by <strong>40%</strong> across 50+ projects</li>
+                        <li>Designed reusable secure CI/CD templates cutting onboarding by <strong>60%</strong></li>
+                        <li>Built internal security dashboard empowering <strong>100+ product owners</strong></li>
+                        <li>Led team of 3 engineers, 15+ enablement sessions</li>
+                    </ul>
+                </div>
+
+                <div class="achievement-card reveal">
+                    <h3>Zymr — Virsec (2020–2024)</h3>
+                    <ul>
+                        <li>Achieved <strong>95% early-vulnerability detection</strong> via DevSecOps pipelines</li>
+                        <li>Hardened <strong>50+ Docker images</strong> against CIS Benchmarks</li>
+                        <li>Reduced infra provisioning time by <strong>70%</strong> with serverless architecture</li>
+                        <li>Achieved <strong>99.9% uptime</strong> via disaster recovery on AWS Well-Architected</li>
+                        <li>Led microservices migration, mentoring 10+ developers</li>
+                        <li>Core member of Virsec product security research team</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ── Awards ───────────────────────────────────────── -->
+    <section id="awards">
+        <div class="container">
+            <h2 class="section-title reveal">Awards &amp; Recognition</h2>
+            <div class="awards-list">
+
+                <div class="award-item reveal">
+                    <span class="award-year">2024</span>
+                    <div>
+                        <h3>Pat on the Back Award — Globant</h3>
+                        <p>Recognized for leading the internal security dashboard &amp; reporting system, driving
+                            cross-functional innovation in security automation.</p>
+                    </div>
+                </div>
+
+                <div class="award-item reveal">
+                    <span class="award-year">2023</span>
+                    <div>
+                        <h3>Hackathon Winner (2nd Place) — Zymr</h3>
+                        <p>Built an AI-powered NLP summarization system using synthetic and open datasets — foundation
+                            for current AI-augmented security work.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ── Currently ────────────────────────────────────── -->
+    <section id="currently">
+        <div class="container">
+            <h2 class="section-title reveal">Currently</h2>
+            <ul class="currently-list reveal">
+                <li>Architecting enterprise security frameworks at <strong>Globant (Roche / GxP regulated)</strong></li>
+                <li>Building open-source work around <strong>supply chain security</strong> and <strong>AI-augmented
+                        DevSecOps</strong></li>
+                <li>Working toward <strong>CKS</strong> and <strong>CKA</strong>, with <strong>AWS Security
+                        Specialty</strong> and <strong>HashiCorp Terraform Associate</strong> planned next</li>
+                <li>Writing about DevSecOps and platform engineering at scale; articles are on the way for Medium and
+                    Dev.to</li>
+                <li><strong>Open to Staff / Principal DevSecOps · Platform Engineering Lead · Cloud Security
+                        Architect</strong> roles in Pune, Hyderabad, UAE, Singapore, or Remote</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ── Footer ──────────────────────────────────────── -->
+    <footer>
+        <div class="footer-links">
+            <a href="https://linkedin.com/in/moheedinamdar" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://github.com/moheedinamdar" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://moheedinamdar.github.io/" target="_blank" rel="noopener">Website</a>
+            <a href="mailto:moheedinamdar@gmail.com">Email</a>
+        </div>
+        <p>Moheed Inamdar &middot; Senior DevSecOps &amp; Platform Engineer</p>
+    </footer>
+
+    <script>
+        // ── Scroll reveal ──────────────────────────────────
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // ── Nav scroll state ───────────────────────────────
+        window.addEventListener('scroll', () => {
+            document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 40);
+        });
+
+        // ── Close mobile nav on link click ─────────────────
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('nav').classList.remove('open');
+            });
+        });
+    </script>
+
+</body>
+
+</html>
