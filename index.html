@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Moheed Inamdar. Senior DevSecOps &amp; Cloud Security Engineer</title>
+    <title>Moheed Inamdar. Senior Platform &amp; DevOps Engineer</title>
     <meta name="description"
-        content="Senior DevSecOps &amp; Cloud Security Engineer with 7+ years securing developer platforms at enterprise scale." />
+        content="Senior Platform &amp; DevOps Engineer with 7+ years building internal developer platforms, golden-path CI/CD and secure-by-default delivery at enterprise scale." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&display=swap"
@@ -508,7 +508,7 @@
                     <div class="line">Moheed Inamdar</div>
                     <div class="line">&nbsp;</div>
                     <div class="line"><span class="prompt">$</span> cat role.txt</div>
-                    <div class="line">Senior DevSecOps &amp; Cloud Security Engineer</div>
+                    <div class="line">Senior Platform &amp; DevOps Engineer</div>
                     <div class="line">7+ years | Securing developer platforms at enterprise scale</div>
                     <div class="line">&nbsp;</div>
                     <div class="line"><span class="prompt">$</span> cat links.json</div>
@@ -538,38 +538,43 @@
                 <span class="comment"># platform.engineering/v1</span>
                 <span class="flag">name:</span> Moheed Inamdar
                 <span class="flag">location:</span> Pune, Maharashtra
-                <span class="flag">role:</span> Senior DevSecOps &amp; Cloud Security Engineer
+                <span class="flag">role:</span> Senior Platform &amp; DevOps Engineer
                 <span class="flag">company:</span> Globant (Client: Roche, GxP regulated)
                 <span class="flag">experience:</span> 7+ years (since Jan 2019)
 
                 <span class="flag">summary:</span> |
-                Enterprise-scale DevSecOps and Cloud Security Engineer architecting
-                security-first developer platforms across <span class="number">300+</span> orgs, <span
-                    class="number">180K+</span> repos,
+                Platform and DevOps engineer building internal developer platforms,
+                golden-path CI/CD and secure-by-default delivery across a GxP-regulated
+                estate of <span class="number">300+</span> orgs, <span class="number">180K+</span> repos,
                 and <span class="number">5K+</span> groups in regulated industries (pharma, healthcare,
-                cybersecurity). Enforced automated scanning across <span class="number">~100%</span> of
-                pipelines, cut CI/CD onboarding by <span class="number">~60%</span>, and built enterprise-adopted
-                security metrics platforms used by <span class="number">100+</span> product owners.
+                cybersecurity). Moved the enterprise from opt-in to enforced-by-default
+                scanning on every eligible project, cut CI/CD onboarding by <span class="number">~60%</span>,
+                and built the governance and measurement layer underneath it.
 
                 <span class="flag">currentFocus:</span>
-                - Software Supply Chain Security (SLSA, SBOM, Sigstore/cosign)
-                - Internal Developer Platforms (Backstage, golden-path templates)
-                - Policy-as-Code (OPA, Kyverno) and Kubernetes Security
-                - AI-Augmented DevSecOps (LLM-driven vulnerability triage, RAG)
-                - LLMOps reference architectures on Kubernetes
+                - Internal Developer Platforms (Backstage scaffolder, golden-path templates)
+                - Repository-centric security and governance automation at scale
+                - Verification: per-run least-privilege credentials, fail-closed preflight,
+                dry-run, audit on every outcome
+                - Vulnerability operations: scanner normalisation, MTTR, backlog age
+
+                <span class="flag">learningInPublic:</span>
+                - Workload identity and OIDC federation
+                - Policy engines: OPA/Rego and Kyverno
+                - OpenTelemetry
 
                 <span class="flag">openTo:</span>
                 <span class="flag">roles:</span>
-                - Staff / Principal DevSecOps Engineer
-                - Platform Engineering Lead (IC track)
-                - Cloud Security Architect
+                - Senior Platform Engineer
+                - Security Platform Engineer
+                - DevEx Platform Engineer
+                - Senior DevOps Engineer
                 <span class="flag">locations:</span> [Pune, Hyderabad, UAE, Singapore, Remote]
             </div>
             <div class="certs-section reveal" style="margin-top:20px;">
                 <div class="section-header"><span class="prompt">$</span> kubectl get certifications</div>
                 <div class="code-block">
-                    <span class="flag">EARNED:</span> AWS Certified Developer, Associate (recertifying 2026)
-                    <span class="flag">IN-PROGRESS:</span> CKA (Certified Kubernetes Administrator)
+                    <span class="comment">No resources found.</span>
                 </div>
             </div>
         </div>
@@ -582,14 +587,14 @@
                 <div class="commit reveal">
                     <div><span class="hash">a3f2c1d</span> <span class="date">(2024, present)</span> <span
                             class="msg">Globant (Client: Roche)</span></div>
-                    <div class="detail">Senior DevSecOps &amp; Cloud Security Engineer</div>
-                    <div class="tags"><span>DevSecOps at scale</span><span>180K+ repos</span><span>5K+
+                    <div class="detail">Senior DevSecOps Engineer (SME)</div>
+                    <div class="tags"><span>Platform at scale</span><span>180K+ repo estate</span><span>5K+
                             groups</span><span>300+
-                            orgs</span><span>~100% scan coverage</span></div>
+                            orgs</span><span>enforced scanning</span></div>
                 </div>
                 <div class="commit reveal">
-                    <div><span class="hash">e7b4a09</span> <span class="date">(2020, 2024)</span> <span
-                            class="msg">Zymr (Client: Virsec)</span></div>
+                    <div><span class="hash">e7b4a09</span> <span class="date">(2020, 2024)</span> <span class="msg">Zymr
+                            (Client: Virsec)</span></div>
                     <div class="detail">Senior DevOps Engineer</div>
                     <div class="tags"><span>Docker</span><span>Kubernetes</span><span>Terraform</span><span>Container
                             Security</span><span>Shift-left security</span></div>
@@ -622,17 +627,43 @@
                 <tbody>
                     <tr>
                         <td>drwxr-xr-x</td>
+                        <td class="name"><a href="https://github.com/moheedinamdar/precommit-security-hooks"
+                                target="_blank">precommit-security-hooks/</a></td>
+                        <td>Pre-commit bundle blocking secrets, unsafe Dockerfiles and insecure IaC. Every scanner runs
+                            from its official, version-pinned image</td>
+                        <td class="status">[working]</td>
+                    </tr>
+                    <tr>
+                        <td>drwxr-xr-x</td>
+                        <td class="name"><a href="https://github.com/moheedinamdar/setup-personal-work-git-profiles"
+                                target="_blank">setup-personal-work-git-profiles/</a></td>
+                        <td>Multiple Git identities on one machine, auto-routed by directory, with per-profile SSH keys
+                            and commit signing</td>
+                        <td class="status">[working]</td>
+                    </tr>
+                    <tr>
+                        <td>drwxr-xr-x</td>
+                        <td class="name"><a href="https://github.com/moheedinamdar/naukri-auto-update"
+                                target="_blank">naukri-auto-update/</a></td>
+                        <td>Headful Playwright automation with a persistent browser profile, built around real
+                            bot-protection constraints</td>
+                        <td class="status">[working]</td>
+                    </tr>
+                    <tr>
+                        <td>drwxr-xr-x</td>
                         <td class="name"><a href="https://github.com/moheedinamdar/supply-chain-security-pipeline"
                                 target="_blank">supply-chain-security-pipeline/</a></td>
-                        <td>SLSA L3 + SBOM (Syft) + Grype + Sigstore cosign + Kyverno on EKS</td>
-                        <td class="status">[building]</td>
+                        <td>Learning in public. CI wires up Syft, Grype and cosign; SLSA provenance and Kyverno
+                            admission are unfinished</td>
+                        <td class="status">[scaffold]</td>
                     </tr>
                     <tr>
                         <td>drwxr-xr-x</td>
                         <td class="name"><a href="https://github.com/moheedinamdar/ai-vulnerability-triage"
                                 target="_blank">ai-vulnerability-triage/</a></td>
-                        <td>LangChain + LLM + RAG over CVE/EPSS for auto-prioritization of findings</td>
-                        <td class="status">[building]</td>
+                        <td>Learning in public. SARIF ingest and de-duplication work; enrichment and the LLM prioritiser
+                            are not implemented</td>
+                        <td class="status">[scaffold]</td>
                     </tr>
                 </tbody>
             </table>
@@ -662,28 +693,30 @@
             <div class="apt-group reveal">
                 <div class="group-name">Security Scanning</div>
                 <div class="apt-packages">
-                    <span>SonarQube</span><span>Snyk</span><span>Trivy</span><span>Checkmarx</span><span>OWASP
-                        ZAP</span><span>Semgrep</span>
+                    <span>GHAS</span><span>SonarQube</span><span>Snyk</span><span>Trivy</span><span>Checkmarx</span><span>Sysdig
+                        Secure</span>
                 </div>
             </div>
             <div class="apt-group reveal">
-                <div class="group-name">Supply Chain & Policy (learning)</div>
-                <div class="apt-packages"><span>Sigstore/cosign</span><span>SLSA</span><span>Syft
-                        SBOM</span><span>OPA</span><span>Kyverno</span></div>
+                <div class="group-name">Platform</div>
+                <div class="apt-packages">
+                    <span>Backstage</span><span>DuckDB</span><span>Parquet</span><span>Next.js</span>
+                </div>
             </div>
             <div class="apt-group reveal">
                 <div class="group-name">Secrets & Identity</div>
-                <div class="apt-packages"><span>HashiCorp Vault</span><span>AWS Secrets Manager</span></div>
+                <div class="apt-packages"><span>HashiCorp Vault</span><span>AWS Secrets Manager</span><span>GitHub App
+                        auth</span><span>Short-lived tokens</span></div>
             </div>
             <div class="apt-group reveal">
                 <div class="group-name">Observability</div>
                 <div class="apt-packages"><span>Prometheus</span><span>Grafana</span><span>ELK
-                        Stack</span><span>OpenTelemetry</span></div>
+                        Stack</span></div>
             </div>
             <div class="apt-group reveal">
-                <div class="group-name">Platform & AI (learning)</div>
-                <div class="apt-packages">
-                    <span>Backstage</span><span>LangChain</span><span>pgvector</span><span>BentoML</span>
+                <div class="group-name">Learning in public (no production experience yet)</div>
+                <div class="apt-packages"><span>Sigstore/cosign</span><span>SLSA</span><span>Syft
+                        SBOM</span><span>OPA</span><span>Kyverno</span><span>OpenTelemetry</span><span>SPIFFE</span>
                 </div>
             </div>
             <div class="apt-group reveal">
@@ -701,13 +734,15 @@
                 <div class="suite reveal">
                     <div class="suite-name">Globant, Roche (2024-Present)</div>
                     <ul>
-                        <li class="pass">Architected Unified Security Metrics Platform (Python/GraphQL/DuckDB/Grafana)
-                            adopted enterprise-wide</li>
-                        <li class="pass">Owned security posture across 300+ orgs, 180K+ repos, 5K+ groups</li>
-                        <li class="pass">Drove security scanning from opt-in to enforced-by-default (~100% pipeline
-                            coverage)</li>
+                        <li class="pass">Designed and built the repository governance control plane (Backstage
+                            scaffolder over a Python control plane)</li>
+                        <li class="pass">Designed and built the GitHub security engine (Python/FastAPI/GitHub Apps)</li>
+                        <li class="pass">Worked across an estate of 300+ orgs, 180K+ repos, 5K+ groups</li>
+                        <li class="pass">Drove security scanning from opt-in to enforced-by-default on every eligible
+                            project</li>
                         <li class="pass">Designed reusable secure CI/CD templates cutting onboarding by ~60%</li>
-                        <li class="pass">Built internal security dashboard empowering 100+ product owners</li>
+                        <li class="pass">Built a security analytics platform normalising every scanner into one
+                            severity model (pre-production)</li>
                         <li class="pass">Led team of 3 engineers, 15+ enablement sessions</li>
                     </ul>
                 </div>
@@ -733,13 +768,13 @@
             <div class="awards-block">
                 <div class="award reveal">
                     <div class="award-title">Pat on the Back Award, Globant</div>
-                    <div class="award-meta">2024 | Recognized for leading the internal security dashboard & reporting
-                        system, driving cross-functional innovation in security automation.</div>
+                    <div class="award-meta">2024 | Recognised for leading the internal developer and security metrics
+                        platform, and for cross-functional work in security automation.</div>
                 </div>
                 <div class="award reveal">
-                    <div class="award-title">Hackathon Winner (2nd Place): Zymr</div>
-                    <div class="award-meta">2023 | Built an AI-powered NLP summarization system using synthetic and open
-                        datasets. Foundation for current AI-augmented security work.</div>
+                    <div class="award-title">2nd Place, Z-Hackathon: Zymr</div>
+                    <div class="award-meta">2023 | AI-powered NLP summarisation system over synthetic and open
+                        datasets.</div>
                 </div>
             </div>
         </div>
@@ -749,14 +784,13 @@
         <div class="container">
             <div class="section-header reveal"><span class="prompt">$</span> systemctl status moheed</div>
             <ul class="status-list reveal">
-                <li>Architecting enterprise security frameworks at <strong>Globant (Roche / GxP regulated)</strong></li>
-                <li>Building open-source work around <strong>supply chain security</strong> and <strong>AI-augmented
-                        DevSecOps</strong></li>
-                <li>Working toward <strong>CKA</strong> (Certified Kubernetes Administrator)</li>
-                <li>Writing about DevSecOps and platform engineering at scale; articles are on the way for Medium and
-                    Dev.to</li>
-                <li><strong>Open to Staff / Principal DevSecOps · Platform Engineering Lead · Cloud Security
-                        Architect</strong> roles in Pune, Hyderabad, UAE, Singapore, or Remote</li>
+                <li>Building developer platforms and governance automation at <strong>Globant (Roche / GxP
+                        regulated)</strong></li>
+                <li>Maintaining open-source developer tooling, and learning supply-chain security in public</li>
+                <li>Writing about platform engineering and secure delivery at scale</li>
+                <li><strong>Open to Senior Platform Engineer &middot; Security Platform Engineer &middot; DevEx Platform
+                        Engineer &middot; Senior DevOps</strong> roles in Pune, Hyderabad, UAE, Singapore, or Remote
+                </li>
             </ul>
         </div>
     </section>
